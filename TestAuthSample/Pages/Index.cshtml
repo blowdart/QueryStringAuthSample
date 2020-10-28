@@ -1,0 +1,17 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Hello</h1>
+    @if (!User.Identity.IsAuthenticated)
+    {
+        <h2>You're anonymous! Try adding a UserName parameter to the query string.</h2>
+    }
+    else
+    {
+        <h2>You're either @User.Identity.Name or a h@x0r.</h2>
+    }
+</div>
